@@ -1,0 +1,5 @@
+NIK|NAMA LENGKAP
+1|anis
+1234|ANDO
+2|noe
+0|anis

@@ -14,7 +14,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page"> 
 <div class="login-box">
   <div class="login-logo">
     <a href="assets/index2.html"><b>Aplikasi Peduli Diri</b></a>
@@ -24,7 +24,7 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Login Aplikasi</p>
 
-      <form action="assets/index3.html" method="post">
+      <form action="config/proses_login.php" method="post">
         <div class="input-group mb-3">
           <input type="number" name="nik" class="form-control" placeholder="Masukkan NIK" required>
           <div class="input-group-append">
@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="nama_lengkap" class="form-control" placeholder="Masukkan Nama Lengkap" required>
+          <input type="text" name="nama_lengkap" class="form-control" placeholder="Masukkan Nama Lengkap" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -49,7 +49,7 @@
         </div>
       </form>
       <p class="mb-0">
-        <a href="register.php" class="text-center">Sudah punya akun? Klik disini</a>
+        <a href="register.php" class="text-center">Belum punya akun? Klik disini</a>
       </p>
     </div>
     <!-- /.login-card-body -->

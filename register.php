@@ -24,7 +24,7 @@
     <div class="card-body register-card-body">
       <p class="register-box-msg">Buat Akun Aplikasi</p>
 
-      <form action="assets/index3.html" method="post">
+      <form action="config/proses_register.php" method="post">
         <div class="input-group mb-3">
           <input type="number" name="nik" class="form-control" placeholder="Masukkan NIK" required>
           <div class="input-group-append">
@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="nama_lengkap" class="form-control" placeholder="Masukkan Nama Lengkap" required>
+          <input type="text" name="nama_lengkap" class="form-control" placeholder="Masukkan Nama Lengkap" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>

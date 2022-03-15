@@ -1,4 +1,13 @@
-
+<?php
+session_start();
+if (empty($_SESSION['nik'])) { ?>
+    <script type="text/javascript">
+    alert("Anda belum login!");
+    window.location.assign("index.php");
+  </script>
+  <?php
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +20,8 @@
 <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
 
 <link rel="stylesheet" href="assets/dist/css/adminlte.min.css?v=3.2.0">
+  <link rel="stylesheet" href="assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
 
@@ -30,7 +41,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
 <a href="assets/index3.html" class="brand-link">
-<img src="assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+<img src="assets/dist/img/fly.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
 <span class="brand-text font-weight-light">Aplikasi Peduli Diri</span>
 </a>
 
@@ -38,10 +49,10 @@
 
 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
 <div class="image">
-<img src="assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+<img src="assets/dist/img/funny1.png" class="img-circle elevation-2" alt="User Image">
 </div>
 <div class="info">
-<a href="#" class="d-block">Nama Peserta</a>
+<a href="#" class="d-block"><?php echo $_SESSION['nama_lengkap']; ?></a>
 </div>
 </div>
 
@@ -57,7 +68,7 @@ Dashboard
 </a>
 </li>
 <li class="nav-item">
-<a href="" class="nav-link">
+<a href="?page=tulis_catatan" class="nav-link">
 <i class="nav-icon fas fa-pencil-alt"></i>
 <p>
 Tulis Catatan
@@ -65,7 +76,7 @@ Tulis Catatan
 </a>
 </li>
 <li class="nav-item">
-<a href="" class="nav-link">
+<a href="?page=riwayat_perjalanan" class="nav-link">
 <i class="nav-icon fas fa-clone"></i>
 <p>
 Riwayat Perjalanan
@@ -73,7 +84,7 @@ Riwayat Perjalanan
 </a>
 </li>
 <li class="nav-item">
-<a href="logout.php" class="nav-link">
+<a href="config/logout.php" class="nav-link">
 <i class="nav-icon fas fa-power-off"></i>
 <p>
 Keluar
@@ -102,6 +113,23 @@ Keluar
 
 <section class="content">
 
+    <?php
+    if (!empty(@$_GET['page'])) {
+        switch (@$_GET['page']) {
+            case 'tulis_catatan':
+                include 'tulis_catatan.php';
+                break;
+            case 'riwayat_perjalanan':
+                include 'riwayat_perjalanan.php';
+                break;
+            default:
+                echo "<h3>Halaman tidak ditemukan!</h3>";
+                  break;
+        }
+    }
+     ?>
+
+
 </section>
 
 </div>
@@ -125,7 +153,16 @@ Keluar
 <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <script src="assets/dist/js/adminlte.min.js?v=3.2.0"></script>
+<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    });
+</script>
 
-<script src="assets/dist/js/demo.js"></script>
 </body>
 </html>

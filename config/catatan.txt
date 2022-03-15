@@ -1,0 +1,9 @@
+
+1|anis|2023-02-02|23:12|Surakarta|38 Celcius
+1|anis|2024-04-02|04:06|Singapura|38 Celcius
+2|noe|2023-03-02|02:03|Yogyakarta|38 Celcius
+2|noe|2022-01-01|05:04|India|39 Celcius
+2|noe|2022-01-01|05:04|India|39 Celcius
+2|noe|||| Celcius
+2|noe|2025-04-03|04:03|Bandung|35 Celcius
+2|noe|2025-04-03|04:03|Bandung|35 Celcius
